@@ -46,6 +46,7 @@ class openam::config {
 # because this is really poo and in all situatuations ALWAYS returns 1
 # have set returns to 0 or 1 - this is really not good!
 # done here due to time constraints
+if $enable_configuration {
   exec { 'configure openam':
     command => '/dev/shm/configurator.pl -f /dev/shm/configurator.properties',
     require => [
@@ -58,4 +59,5 @@ class openam::config {
     notify  => Service[$openam::tomcat_service],
     returns => [0,1]
   }
+}
 }

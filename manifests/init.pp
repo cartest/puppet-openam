@@ -12,26 +12,26 @@
 #
 
 class openam(
-  $version            = hiera('openam::version'),
-  $java_home          = hiera('openam::java_home'),
-  $tomcat_user        = hiera('openam::tomcat_user'),
-  $tomcat_service     = hiera('openam::tomcat_service', 'tomcat-openam'),
-  $tomcat_home        = hiera('openam::tomcat_home'),
-  $config_dir         = hiera('openam::config_dir', '/opt/openam'),
-  $log_dir            = hiera('openam::log_dir', '/var/log/openam'),
-  $locale             = hiera('openam::locale', 'en_US'),
-  $ssoadm             = hiera('openam::ssoadm', '/usr/local/bin/ssoadm'),
+  $version                = hiera('openam::version'),
+  $java_home              = hiera('openam::java_home'),
+  $tomcat_user            = hiera('openam::tomcat_user'),
+  $tomcat_service         = hiera('openam::tomcat_service', 'tomcat-openam'),
+  $tomcat_home            = hiera('openam::tomcat_home'),
+  $config_dir             = hiera('openam::config_dir', '/opt/openam'),
+  $log_dir                = hiera('openam::log_dir', '/var/log/openam'),
+  $locale                 = hiera('openam::locale', 'en_US'),
+  $ssoadm                 = hiera('openam::ssoadm', '/usr/local/bin/ssoadm'),
+  $enable_configuration   = hiera('openam::enable_configuration', true),
+  $deployment_uri         = hiera('openam::deployment_uri'),
+  $site_url               = hiera('openam::site_url'),
+  $cookie_domain          = hiera('openam::cookie_domain'),
+  $master                 = hiera('openam::master'),
 
-  $deployment_uri     = hiera('openam::deployment_uri'),
-  $site_url           = hiera('openam::site_url'),
-  $cookie_domain      = hiera('openam::cookie_domain'),
-  $master             = hiera('openam::master'),
-
-  $server_protocol    = hiera('openam::server_protocol', 'http'),
-  $server_port        = hiera('openam::server_port', '8080'),
-  $amadmin_pw         = hiera('openam::amadmin_pw'),
-  $amldapuser_pw      = hiera('openam::amldapuser_pw'),
-  $encryption_key     = hiera('openam::encryption_key'),
+  $server_protocol        = hiera('openam::server_protocol', 'http'),
+  $server_port            = hiera('openam::server_port', '8080'),
+  $amadmin_pw             = hiera('openam::amadmin_pw'),
+  $amldapuser_pw          = hiera('openam::amldapuser_pw'),
+  $encryption_key         = hiera('openam::encryption_key'),
 
   $userstore_host         = hiera('openam::userstore_host', 'localhost'),
   $userstore_ldap_port    = hiera('openam::userstore_ldap_port', '1389'),
@@ -47,9 +47,9 @@ class openam(
   $configstore_binddn     = hiera('openam::configstore_binddn'),
   $configstore_bindpw     = hiera('openam::configstore_bindpw'),
 
-  $datastore   = 'embedded',
-  $environment = hiera('openam::environment'),
-  $master_url  = hiera('openam::master_url')
+  $datastore              = 'embedded',
+  $environment            = hiera('openam::environment'),
+  $master_url             = hiera('openam::master_url')
 ) {
   $server_host = $::sso_server_hostname ? {
     undef   => $::fqdn,
