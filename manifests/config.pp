@@ -44,7 +44,13 @@ class openam::config {
     owner  => $openam::tomcat_user,
     group  => $openam::tomcat_user,
     require => Package['tomcat']
+  }->
+  file { "${openam::config_dir}${openam::deployment_uri}":
+    ensure => directory,
+    owner  => $openam::tomcat_user,
+    group  => $openam::tomcat_user,
   }
+
 # because this is really poo and in all situatuations ALWAYS returns 1
 # have set returns to 0 or 1 - this is really not good!
 # done here due to time constraints
