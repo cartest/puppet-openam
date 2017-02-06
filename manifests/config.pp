@@ -20,6 +20,7 @@ class openam::config {
     owner  => $openam::tomcat_user,
     group  => $openam::tomcat_user,
     mode   => '0755',
+    require => Package['tomcat']
   }
 
   # Contains passwords, thus (temporarily) stored in /dev/shm
