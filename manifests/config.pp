@@ -43,6 +43,7 @@ class openam::config {
     ensure => directory,
     owner  => $openam::tomcat_user,
     group  => $openam::tomcat_user,
+    require => Package['tomcat']
   }
 # because this is really poo and in all situatuations ALWAYS returns 1
 # have set returns to 0 or 1 - this is really not good!
