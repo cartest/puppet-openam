@@ -1,0 +1,14 @@
+{
+  "name": "openam",
+  "version": "0.0.3",
+  "author": "Conduct AS",
+  "summary": "OpenAM deployment and configuration module",
+  "license": "Simplified BSD License",
+  "source": "https://github.com/cartest/puppet-openam",
+  "project_page": "https://github.com/cartest/puppet-openam",
+  "issues_url": "https://github.com/cartest/puppet-openam/issues",
+  "dependencies": [
+    {"name":"opendj","version_requirement":">= 0.0.1"}
+  ],
+  "data_provider": null
+}
