@@ -6,9 +6,6 @@
   "license": "Simplified BSD License",
   "source": "https://github.com/cartest/puppet-openam",
   "project_page": "https://github.com/cartest/puppet-openam",
-  "issues_url": "https://github.com/cartest/puppet-openam/issues",
-  "dependencies": [
-    {"name":"opendj","version_requirement":">= 0.0.1"}
-  ],
+  "issues_url": "https://github.com/ConductAS/puppet-openam/issues",
   "data_provider": null
 }
